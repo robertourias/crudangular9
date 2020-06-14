@@ -1,16 +1,28 @@
-import { ApiService } from './services/api.service';
-import { BrowserModule } from '@angular/platform-browser';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-
+import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { ApiServiceService } from './services/api-service.service';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [HttpClientModule, ApiService],
-  bootstrap: [AppComponent],
+  declarations: [
+    AppComponent,
+    UsuariosComponent,
+    LoginComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule
+  ],
+  providers: [
+    HttpClient,
+    ApiServiceService
+  ],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
-
+export class AppModule { }
